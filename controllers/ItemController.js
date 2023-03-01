@@ -73,10 +73,10 @@ export const getAllbyCategory = async (req, res) => {
     results.countPage = Math.ceil(
       (await ItemModel.find({
         category: itemCategory,
-      }).count()) / limit
+      }).countDocuments()) / limit
     );
 
-    results.countItems = await ItemModel.count();
+    results.countItems = await ItemModel.countDocuments();
 
     res.json(results);
   } catch (err) {
