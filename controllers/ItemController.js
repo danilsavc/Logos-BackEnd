@@ -9,8 +9,8 @@ export const getAll = async (req, res) => {
   const results = {};
 
   try {
-    results.countPage = Math.ceil((await ItemModel.count()) / limit);
-    results.countItems = await ItemModel.count();
+    results.countPage = Math.ceil((await ItemModel.countDocuments()) / limit);
+    results.countItems = await ItemModel.countDocuments();
     if (endIndex < (await ItemModel.countDocuments().exec())) {
       results.next = {
         page: page + 1,
