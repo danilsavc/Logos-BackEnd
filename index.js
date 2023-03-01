@@ -16,7 +16,7 @@ import { handleValidationErrors, checkAuth } from "./utils/index.js";
 import { config } from "./config.js";
 
 mongoose
-  .connect(config.db.link)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("DB ok"))
   .catch((err) => console.log("DB error", err));
 
@@ -65,7 +65,7 @@ app.get("/order", checkAuth, OrderController.getAllOrder);
 app.get("/order/:id", checkAuth, OrderController.getOneOrder);
 app.delete("/order/:id", checkAuth, orderValidation, OrderController.removeOrder);
 
-app.listen(config.app.port, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
