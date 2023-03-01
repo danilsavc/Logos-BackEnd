@@ -10,7 +10,7 @@ export const orderCreate = async (req, res) => {
       amountPers: req.body.amountPers,
       call: req.body.call,
       item: req.body.item,
-      firstName: req.body.firstName,
+      name: req.body.name,
       numberOrder: req.body.numberOrder,
       phone: req.body.phone,
       adress: req.body.adress,
