@@ -13,8 +13,6 @@ import {
 import { UserController, ItemController, OrderController } from "./controllers/index.js";
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 
-import { config } from "./config.js";
-
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("DB ok"))
