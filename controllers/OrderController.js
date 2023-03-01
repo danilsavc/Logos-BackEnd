@@ -37,8 +37,8 @@ export const getAllOrder = async (req, res) => {
   const results = {};
 
   try {
-    results.countPage = Math.ceil((await OrderModel.countDocuments()) / limit);
-    results.countItems = await OrderModel.countDocuments();
+    results.countPage = Math.ceil((await OrderModel.count()) / limit);
+    results.countItems = await OrderModel.count();
     if (endIndex < (await OrderModel.countDocuments().exec())) {
       results.next = {
         page: page + 1,
