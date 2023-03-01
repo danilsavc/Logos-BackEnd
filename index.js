@@ -13,17 +13,10 @@ import {
 import { UserController, ItemController, OrderController } from "./controllers/index.js";
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 
-// // or
-
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => console.log("connected"))
-  .catch((e) => console.log(e));
-
-// mongoose
-//   .connect(process.env.MONGODB_URI)
-//   .then(() => console.log("DB ok"))
-//   .catch((err) => console.log("DB error", err));
+  .then(() => console.log("DB ok"))
+  .catch((err) => console.log("DB error", err));
 
 const app = express();
 
