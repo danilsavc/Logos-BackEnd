@@ -14,7 +14,7 @@ import { UserController, ItemController, OrderController } from "./controllers/i
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 
 mongoose
-  .connect("mongodb+srv://admin:wwwwww@cluster0.w8noqaz.mongodb.net/?retryWrites=true&w=majority")
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("DB oK"))
   .catch((err) => console.log("DB error", err));
 
