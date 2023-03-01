@@ -33,7 +33,7 @@ const OrderSchema = new mongoose.Schema(
       type: Array,
       require: true,
     },
-    firstName: {
+    name: {
       type: String,
       require: true,
     },
